@@ -1,14 +1,19 @@
+import Contact from "./contact/Contact";
+import Footer from "./footer/Footer";
 import Header from "./header/Header";
 import Navbar from "./navbar/Navbar";
+import Profile from "./profile/Profile";
+import Projects from "./projects/Projects";
 
 function App() {
   return (
     <>
       <Navbar />
       <Header />
-      <div className="bg-gray-100 h-screen flex justify-center items-center ">
-        <h1 className="text-3xl">Projects</h1>
-      </div>
+      <Projects />
+      <Profile />
+      <Contact />
+      <Footer />
 
       {/* Projects Section */}
     </>
