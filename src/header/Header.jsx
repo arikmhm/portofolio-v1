@@ -70,6 +70,7 @@ const Header = () => {
           autoPlay
           loop
           muted
+          playsInline
           src="/img/hero.mp4"
           alt="Hero Image"
           style={
