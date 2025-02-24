@@ -56,6 +56,23 @@ const Header = () => {
   const textOpacity = useTransform(scrollYProgress, [0, 0.2], [1, 0.8]);
   const buttonOpacity = useTransform(scrollYProgress, [0, 0.3], [1, 0.9]);
 
+  const [borderAngle, setBorderAngle] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setBorderAngle((prevAngle) => (prevAngle + 1) % 360); // Animasi rotasi border
+    }, 16); // Rotasi sekitar 60fps
+    return () => clearInterval(interval);
+  }, []);
+
+  const boxStyle = {
+    cursor: "pointer",
+    animation: "rotate-border 3s linear infinite",
+    background: `conic-gradient(from ${borderAngle}deg, black 80%, white 90%, black 100%)`,
+    transition: "background 1s ease-out",
+    filter: "grayscale(100%)",
+  };
+
   return (
     <section ref={ref} className="relative w-full h-[400vh]">
       <div className="sticky top-0 h-screen overflow-hidden bg-black">
@@ -66,13 +83,7 @@ const Header = () => {
             opacity: useTransform(scrollYProgress, [0, 0.5], [0.4, 0.6]),
           }}
         />
-        <motion.video
-          autoPlay
-          loop
-          muted
-          playsInline
-          src="/img/hero.mp4"
-          alt="Hero Image"
+        <motion.div
           style={
             isMobile
               ? {
@@ -80,8 +91,9 @@ const Header = () => {
                   transformOrigin: "center center",
                   width: imageScaleMobileWidth,
                   height: imageScaleMobileHeight,
-                  objectFit: "cover",
-                  filter: "grayscale(100%)",
+                  padding: "1px",
+
+                  ...boxStyle,
                 }
               : {
                   scale: imageScale,
@@ -89,12 +101,22 @@ const Header = () => {
                   transformOrigin: "center center",
                   width: "100%",
                   height: "100%",
-                  objectFit: "cover",
-                  filter: "grayscale(100%)",
+                  padding: "2px",
+
+                  ...boxStyle,
                 }
           }
-          className="absolute top-0 left-0 rounded-lg"
-        />
+          className="absolute top-0 left-0 bg-red-500 border-amber-50"
+        >
+          <motion.video
+            src="/img/hero.mp4"
+            className="h-full w-full object-cover"
+            autoPlay
+            loop
+            muted
+            playsInline
+          ></motion.video>
+        </motion.div>
 
         {/* Content */}
         <motion.div
