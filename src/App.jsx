@@ -8,6 +8,7 @@ import Projects from "./projects/Projects";
 function App() {
   return (
     <>
+      {/* <HamburgerButton /> */}
       <Navbar />
       <Header />
       <Projects />

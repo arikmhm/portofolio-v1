@@ -111,9 +111,9 @@ const Contact = () => {
                 Contact Information
               </h3>
               <div className="space-y-4">
-                <p className="text-lg font-light">arikmhm@example.com</p>
-                <p className="text-lg font-light">+1 (234) 567-8900</p>
-                <p className="text-lg font-light">Jakarta, Indonesia</p>
+                <p className="text-lg font-light">mhm.ariyanto@gmail.com</p>
+                <p className="text-lg font-light">+628123456789</p>
+                <p className="text-lg font-light">Semarang, Indonesia</p>
               </div>
             </div>
 

@@ -36,7 +36,7 @@ const Footer = () => {
                 href="/"
                 className="text-xl font-medium text-black hover:text-gray-600 transition-colors duration-300"
               >
-                MA.
+                Arikmhm.
               </a>
               <p className="text-sm text-gray-600 font-light leading-relaxed max-w-xs">
                 Full Stack Developer focused on creating clean, elegant
@@ -69,7 +69,7 @@ const Footer = () => {
                 Get in Touch
               </h3>
               <p className="text-sm text-gray-600 font-light">
-                Jakarta, Indonesia
+                Semarang, Indonesia
               </p>
               <div className="flex space-x-4">
                 {socialLinks.map(({ Icon, href, label }) => (
@@ -93,7 +93,7 @@ const Footer = () => {
         <div className="py-6 border-t border-gray-100">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm text-gray-600">
-              © {currentYear} Muhammad Ariyanto. All rights reserved.
+              © {currentYear} Arikmhm. All rights reserved.
             </p>
             <div className="flex items-center space-x-6">
               <a

@@ -27,13 +27,13 @@ const Header = () => {
   const imageOpacity = useTransform(scrollYProgress, [0, 0.5], [0.7, 1], {
     clamp: true,
   });
-  const contentY = useTransform(scrollYProgress, [0, 0.5], ["100vh", "32vh"], {
+  const contentY = useTransform(scrollYProgress, [0, 0.5], ["100vh", "25%"], {
     clamp: true,
   });
   const contentYMobile = useTransform(
     scrollYProgress,
     [0, 0.5],
-    ["100vh", "26vh"]
+    ["100vh", "18%"]
   );
   const imageScaleMobileWidth = useTransform(
     scrollYProgress,

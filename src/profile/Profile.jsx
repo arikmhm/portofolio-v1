@@ -15,7 +15,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 
 const Profile = () => {
-  const roles = ["Full Stack Developer", "UI/UX Enthusiast", "Problem Solver"];
+  const roles = ["Full Stack Developer"];
 
   const technologies = [
     { Icon: FaReact, name: "React" },
