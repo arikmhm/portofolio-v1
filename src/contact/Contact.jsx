@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
-
+import emailjs from "@emailjs/browser";
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -15,9 +15,24 @@ const Contact = () => {
     });
   };
 
+  const SERVICE_ID = "service_7ad18hc";
+  const TEMPLATE_ID = "template_7njvz9c";
+  const PUBLIC_KEY = "JTR75g33l7RcTM9vj";
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission
+    emailjs
+      .sendForm(SERVICE_ID, TEMPLATE_ID, e.target, PUBLIC_KEY)
+      .then((result) => {
+        alert("Message sent successfully!");
+        setFormData({
+          name: "",
+          email: "",
+          message: "",
+        });
+      })
+      .catch(() => {
+        alert("Failed to send message. Please try again later.");
+      });
     console.log("Form submitted:", formData);
   };
 
