@@ -20,8 +20,15 @@ const Contact = () => {
   const PUBLIC_KEY = "JTR75g33l7RcTM9vj";
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    const templateParams = {
+      from_name: formData.name,
+      from_email: formData.email,
+      message: formData.message,
+    };
+
     emailjs
-      .sendForm(SERVICE_ID, TEMPLATE_ID, e.target, PUBLIC_KEY)
+      .send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY)
       .then((result) => {
         alert("Message sent successfully!");
         setFormData({
