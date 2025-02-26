@@ -1,4 +1,14 @@
 @import "tailwindcss";
+body {
+  background-color: black;
+}
+
+/* Untuk Chrome, Edge, dan Safari */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Untuk Firefox */
 html {
-  scroll-behavior: smooth;
+  scrollbar-width: none;
 }

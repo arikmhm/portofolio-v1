@@ -13,12 +13,14 @@ import {
 import GitHubCalendar from "react-github-calendar";
 import { useEffect } from "react";
 import { useState } from "react";
+import { SiExpress } from "react-icons/si";
 
 const Profile = () => {
   const roles = ["Full Stack Developer"];
 
   const technologies = [
     { Icon: FaReact, name: "React" },
+    { Icon: SiExpress, name: "Express" },
     { Icon: FaNodeJs, name: "Node.js" },
     { Icon: FaJs, name: "JavaScript" },
     { Icon: FaDatabase, name: "Database" },
@@ -56,8 +58,8 @@ const Profile = () => {
   }, []);
 
   return (
-    <section className="min-h-screen bg-white">
-      <div className="max-w-6xl mx-auto px-4 py-24">
+    <section className="bg-white">
+      <div className="max-w-6xl mx-auto px-4 py-8">
         {/* Profile Header */}
         <div className="mb-24">
           <div className="flex flex-col items-center">
@@ -103,7 +105,7 @@ const Profile = () => {
           <h2 className="text-sm uppercase tracking-wider text-gray-500 text-center mb-12">
             Technologies I Work With
           </h2>
-          <div className="grid grid-cols-3 md:grid-cols-6 gap-12 max-w-3xl mx-auto">
+          <div className="flex flex-wrap justify-center gap-12 max-w-3xl mx-auto">
             {technologies.map(({ Icon, name }) => (
               <div key={name} className="text-center">
                 <Icon className="text-3xl text-black mx-auto mb-3" />
