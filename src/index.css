@@ -12,3 +12,48 @@ body {
 html {
   scrollbar-width: none;
 }
+
+@property --border-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+@keyframes border-rotate {
+  to {
+    --border-angle: 360deg;
+  }
+}
+
+@layer components {
+  .border-rotate {
+    --border-angle: 0deg;
+    animation: border-rotate 8s linear infinite; /* Pastikan animasi diterapkan di sini */
+  }
+}
+
+@layer utilities {
+  @keyframes blink {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+  .animate-blink {
+    animation: blink 1s step-end infinite;
+  }
+  @keyframes laoding {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(250%);
+    }
+  }
+  .animate-loading-bar {
+    animation: laoding 1s ease infinite;
+  }
+}

@@ -56,7 +56,7 @@ const Header = () => {
   const textOpacity = useTransform(scrollYProgress, [0, 0.2], [1, 0.8]);
   const buttonOpacity = useTransform(scrollYProgress, [0, 0.3], [1, 0.9]);
 
-  const [borderAngle, setBorderAngle] = useState(0);
+  /*  const [borderAngle, setBorderAngle] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -71,7 +71,7 @@ const Header = () => {
     background: `conic-gradient(from ${borderAngle}deg, black 80%, white 90%, black 100%)`,
     transition: "background 1s ease-out",
     filter: "grayscale(100%)",
-  };
+  }; */
 
   return (
     <section ref={ref} className="relative w-full h-[400vh]">
@@ -93,7 +93,7 @@ const Header = () => {
                   height: imageScaleMobileHeight,
                   padding: "1px",
 
-                  ...boxStyle,
+                  // ...boxStyle,
                 }
               : {
                   scale: imageScale,
@@ -103,10 +103,10 @@ const Header = () => {
                   height: "100%",
                   padding: "2px",
 
-                  ...boxStyle,
+                  // ...boxStyle,
                 }
           }
-          className="absolute top-0 left-0 bg-red-500 border-amber-50"
+          className="absolute top-0 left-0 bg-red-500 border-amber-50 border-rotate cursor-pointer  bg-conic/[from_var(--border-angle)] from-black from-80% via-white via-90% to-black to-100% p-px duration-1000 ease-out grayscale-100"
         >
           <motion.video
             src="/img/hero.mp4"
