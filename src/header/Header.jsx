@@ -1,7 +1,8 @@
+/* eslint-disable react/prop-types */
 import { motion, useScroll, useTransform } from "motion/react";
 import { useEffect, useState, useRef } from "react";
 
-const Header = () => {
+const Header = ({ onVideoLoaded }) => {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -73,6 +74,21 @@ const Header = () => {
     filter: "grayscale(100%)",
   }; */
 
+  // Autoplay video on mobile
+  useEffect(() => {
+    const video = document.querySelector("video");
+
+    const enableAutoplay = () => {
+      video.muted = true;
+      video.play();
+      document.removeEventListener("touchstart", enableAutoplay);
+    };
+
+    if (video) {
+      document.addEventListener("touchstart", enableAutoplay);
+    }
+  }, []);
+
   return (
     <section ref={ref} className="relative w-full h-[400vh]">
       <div className="sticky top-0 h-screen overflow-hidden bg-black">
@@ -115,6 +131,7 @@ const Header = () => {
             loop
             muted
             playsInline
+            onLoadedData={onVideoLoaded}
           ></motion.video>
         </motion.div>
 
