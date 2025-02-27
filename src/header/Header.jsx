@@ -81,8 +81,33 @@ const Header = ({ setIsVideoLoaded }) => {
     const video = videoRef.current;
 
     if (video) {
-      video.oncanplaythrough = () => {
+      video.oncanplaythrough = async () => {
         setIsVideoLoaded(true); // Beri tahu App bahwa video sudah siap
+
+        try {
+          await video.play(); // Coba autoplay setelah video siap
+        } catch (err) {
+          console.warn("Autoplay gagal, menunggu interaksi pengguna", err);
+        }
+      };
+
+      // Fallback: Play video setelah interaksi pertama user (misal: klik)
+      const handleUserInteraction = async () => {
+        try {
+          await video.play();
+          document.removeEventListener("click", handleUserInteraction);
+          document.removeEventListener("touchstart", handleUserInteraction);
+        } catch (err) {
+          console.warn("Gagal play video setelah interaksi pengguna", err);
+        }
+      };
+
+      document.addEventListener("click", handleUserInteraction);
+      document.addEventListener("touchstart", handleUserInteraction);
+
+      return () => {
+        document.removeEventListener("click", handleUserInteraction);
+        document.removeEventListener("touchstart", handleUserInteraction);
       };
     }
   }, [setIsVideoLoaded]);
