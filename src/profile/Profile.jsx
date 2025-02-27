@@ -119,7 +119,7 @@ const Profile = () => {
         <div className="max-w-2xl mx-auto mb-24">
           <div className="flex flex-col md:flex-row justify-center items-center gap-12">
             {/* Social Links */}
-            <div className="flex gap-8">
+            {/* <div className="flex gap-8">
               {socialLinks.map(({ Icon, link, label }) => (
                 <a
                   key={label}
@@ -131,7 +131,7 @@ const Profile = () => {
                   <Icon className="text-2xl" />
                 </a>
               ))}
-            </div>
+            </div> */}
 
             {/* Download CV */}
             <a

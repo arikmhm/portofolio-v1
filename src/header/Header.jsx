@@ -1,7 +1,8 @@
+/* eslint-disable react/prop-types */
 import { motion, useScroll, useTransform } from "motion/react";
 import { useEffect, useState, useRef } from "react";
 
-const Header = () => {
+const Header = ({ onVideoLoaded }) => {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -115,6 +116,7 @@ const Header = () => {
             loop
             muted
             playsInline
+            onLoadedData={onVideoLoaded}
           ></motion.video>
         </motion.div>
 
