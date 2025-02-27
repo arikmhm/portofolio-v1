@@ -36,9 +36,9 @@ function App() {
 
   return (
     <>
-      {isLoading && <LoadingScreen onComplete={() => setIsLoading(false)} />}
+      {isLoading && <LoadingScreen />}
       <div
-        className={`transition-opacity duration-700 ${
+        className={`transition-opacity duration-500 ${
           isLoading ? "opacity-0" : "opacity-100"
         }`}
       >
@@ -49,8 +49,7 @@ function App() {
           scrollY={scrollY}
         />
         <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-        <Header onVideoLoaded={() => setIsVideoLoaded(true)} />{" "}
-        {/* Pass event ke Header */}
+        <Header setIsVideoLoaded={setIsVideoLoaded} />
         <Projects />
         <Profile />
         <Contact />

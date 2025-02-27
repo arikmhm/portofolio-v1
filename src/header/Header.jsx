@@ -2,8 +2,9 @@
 import { motion, useScroll, useTransform } from "motion/react";
 import { useEffect, useState, useRef } from "react";
 
-const Header = ({ onVideoLoaded }) => {
+const Header = ({ setIsVideoLoaded }) => {
   const ref = useRef(null);
+  const videoRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start start", "end start"],
@@ -75,19 +76,16 @@ const Header = ({ onVideoLoaded }) => {
   }; */
 
   // Autoplay video on mobile
+  // Efek untuk mendeteksi apakah video sudah termuat sepenuhnya
   useEffect(() => {
-    const video = document.querySelector("video");
-
-    const enableAutoplay = () => {
-      video.muted = true;
-      video.play();
-      document.removeEventListener("touchstart", enableAutoplay);
-    };
+    const video = videoRef.current;
 
     if (video) {
-      document.addEventListener("touchstart", enableAutoplay);
+      video.oncanplaythrough = () => {
+        setIsVideoLoaded(true); // Beri tahu App bahwa video sudah siap
+      };
     }
-  }, []);
+  }, [setIsVideoLoaded]);
 
   return (
     <section ref={ref} className="relative w-full h-[400vh]">
@@ -125,13 +123,13 @@ const Header = ({ onVideoLoaded }) => {
           className="absolute top-0 left-0 bg-red-500 border-amber-50 border-rotate cursor-pointer  bg-conic/[from_var(--border-angle)] from-black from-80% via-white via-90% to-black to-100% p-px duration-1000 ease-out grayscale-100"
         >
           <motion.video
+            ref={videoRef}
             src="/img/hero.mp4"
             className="h-full w-full object-cover"
             autoPlay
             loop
             muted
             playsInline
-            onLoadedData={onVideoLoaded}
           ></motion.video>
         </motion.div>
 
