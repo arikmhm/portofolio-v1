@@ -58,7 +58,7 @@ const Profile = () => {
   }, []);
 
   return (
-    <section className="bg-white">
+    <section className="bg-white" id="profile">
       <div className="max-w-6xl mx-auto px-4 py-8">
         {/* Profile Header */}
         <div className="mb-24">

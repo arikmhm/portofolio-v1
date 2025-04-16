@@ -8,22 +8,23 @@ const Projects = () => {
 
   const featuredProjects = [
     {
-      title: "E-Commerce Platform",
+      title: "Task Prioritization Decision Support System",
       description:
-        "A full-stack e-commerce solution with real-time inventory management",
-      tech: ["React", "Node.js", "MongoDB"],
-      image: "/img/project1.jpg",
+        "A simple Decision Support System (DSS) that utilizes the Simple Additive Weighting (SAW) method to objectively prioritize tasks based on multiple criteria, enhancing productivity and decision-making efficiency.",
+      tech: ["React", "Tailwind", "Node.js"],
+      image: "/img/spk-prioritas-tugas.png",
       github: "https://github.com/username/project",
-      live: "https://project-demo.com",
+      live: "https://spk-prioritas-tugas.vercel.app",
       featured: true,
     },
     {
-      title: "Task Management App",
-      description: "Collaborative task management tool with real-time updates",
-      tech: ["Next.js", "Firebase", "Tailwind"],
-      image: "/img/project2.jpg",
+      title: "Sewa by Mazana ",
+      description:
+        "A static website designed to showcase a catalog of kebaya rental options, providing essential information and facilitating easy access for customers seeking elegant traditional attire for special occasions.",
+      tech: ["React", "Tailwind"],
+      image: "/img/sewa-by-mazana.png",
       github: "https://github.com/username/project",
-      live: "https://project-demo.com",
+      live: "https://sewa-by-mazana.vercel.app",
       featured: true,
     },
     {
@@ -128,7 +129,7 @@ const Projects = () => {
   );
 
   return (
-    <section className="bg-white py-24">
+    <section className="bg-white py-24" id="projects">
       <div className="max-w-6xl mx-auto px-4">
         {/* Featured Projects */}
         <div className="mb-32">
