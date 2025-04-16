@@ -28,12 +28,13 @@ const Projects = () => {
       featured: true,
     },
     {
-      title: "AI Content Generator",
-      description: "Content generation tool powered by machine learning",
+      title: "SENSASI 2024",
+      description:
+        "A static website dedicated to the national seminar on information systems 2024, featuring detailed profiles of speakers, comprehensive event information, and a user-friendly registration button, all focused on the latest discussions surrounding tech winter topics.",
       tech: ["Python", "TensorFlow", "FastAPI"],
-      image: "/img/project3.jpg",
+      image: "/img/sensasi-2024.png",
       github: "https://github.com/username/project",
-      live: "https://project-demo.com",
+      live: "https://sensasi2024.hmsisfoudinus.org/",
       featured: true,
     },
   ];
