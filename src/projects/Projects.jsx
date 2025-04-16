@@ -44,16 +44,16 @@ const Projects = () => {
       title: "Portfolio Website",
       description: "Personal portfolio website built with React and Tailwind",
       tech: ["React", "Tailwind", "Framer Motion"],
-      year: "2024",
-      github: "https://github.com/username/portfolio",
+      year: "2025",
+      github: "https://arikmhm.vercel.app/",
     },
-    {
-      title: "Weather Dashboard",
-      description: "Real-time weather monitoring dashboard",
-      tech: ["Vue.js", "OpenWeather API"],
-      year: "2023",
-      github: "https://github.com/username/weather",
-    },
+    // {
+    //   title: "Weather Dashboard",
+    //   description: "Real-time weather monitoring dashboard",
+    //   tech: ["Vue.js", "OpenWeather API"],
+    //   year: "2023",
+    //   github: "https://github.com/username/weather",
+    // },
     // Add more archived projects as needed
   ];
   const [isMobile, setIsMobile] = useState(false);
