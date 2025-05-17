@@ -135,8 +135,9 @@ const Profile = () => {
 
             {/* Download CV */}
             <a
-              href="/files/muhammad-ariyanto-cv.pdf"
+              href="https://drive.google.com/file/d/1NxquVghiVu-R3TmXO7AvjZEacDvvitP1/view?usp=sharing"
               download
+              target="_blank"
               className="inline-flex items-center px-6 py-3 border border-black text-sm uppercase tracking-wider hover:bg-black hover:text-white transition-colors duration-300"
             >
               <FaFileDownload className="mr-2" />

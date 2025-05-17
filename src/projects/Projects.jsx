@@ -8,6 +8,16 @@ const Projects = () => {
 
   const featuredProjects = [
     {
+      title: "SENSASI 2025",
+      description:
+        "A static website for the National Seminar on Information Systems and Call For Paper 2025, showcasing speaker profiles, event details, and an easy registration button, focused on the latest trends in digital transformation and Industry 4.0.",
+      tech: ["React", "Tailwind"],
+      image: "/img/sensasi-2025.png",
+      github: "https://github.com/username/project",
+      live: "https://sensasi2025.hmsisfoudinus.org/",
+      featured: true,
+    },
+    {
       title: "Task Prioritization Decision Support System",
       description:
         "A simple Decision Support System (DSS) that utilizes the Simple Additive Weighting (SAW) method to objectively prioritize tasks based on multiple criteria, enhancing productivity and decision-making efficiency.",
