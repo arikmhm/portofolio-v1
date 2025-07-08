@@ -9,6 +9,7 @@ import {
   FaHtml5,
   FaJs,
   FaDatabase,
+  FaLaravel,
 } from "react-icons/fa";
 import GitHubCalendar from "react-github-calendar";
 import { useEffect } from "react";
@@ -26,6 +27,7 @@ const Profile = () => {
     { Icon: FaDatabase, name: "Database" },
     { Icon: FaHtml5, name: "HTML5" },
     { Icon: FaCss3Alt, name: "CSS3" },
+    { Icon: FaLaravel, name: "Laravel" },
   ];
 
   const socialLinks = [
@@ -108,7 +110,7 @@ const Profile = () => {
           <div className="flex flex-wrap justify-center gap-12 max-w-3xl mx-auto">
             {technologies.map(({ Icon, name }) => (
               <div key={name} className="text-center">
-                <Icon className="text-3xl text-black mx-auto mb-3" />
+                <Icon className="text-3xl text-black mx-auto mb-3 " />
                 <h3 className="text-sm font-light text-gray-600">{name}</h3>
               </div>
             ))}

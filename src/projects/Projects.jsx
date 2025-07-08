@@ -27,16 +27,7 @@ const Projects = () => {
       live: "https://spk-prioritas-tugas.vercel.app",
       featured: true,
     },
-    {
-      title: "Sewa by Mazana ",
-      description:
-        "A static website designed to showcase a catalog of kebaya rental options, providing essential information and facilitating easy access for customers seeking elegant traditional attire for special occasions.",
-      tech: ["React", "Tailwind"],
-      image: "/img/sewa-by-mazana.png",
-      github: "https://github.com/username/project",
-      live: "https://sewa-by-mazana.vercel.app",
-      featured: true,
-    },
+
     {
       title: "SENSASI 2024",
       description:
