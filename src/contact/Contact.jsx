@@ -196,7 +196,7 @@ const Contact = () => {
                 >
                   <FaLinkedin size={24} />
                 </a>
-                <a
+                {/* <a
                   href="https://twitter.com/arikmhm"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -204,7 +204,7 @@ const Contact = () => {
                   className="text-gray-600 hover:text-black transition-colors duration-300"
                 >
                   <FaTwitter size={24} />
-                </a>
+                </a> */}
               </div>
             </div>
 
