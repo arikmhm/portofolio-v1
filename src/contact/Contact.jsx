@@ -168,7 +168,7 @@ const Contact = () => {
               </h3>
               <div className="space-y-4">
                 <p className="text-lg font-light">mhm.ariyanto@gmail.com</p>
-                <p className="text-lg font-light">+628123456789</p>
+                <p className="text-lg font-light">+6282245750310</p>
                 <p className="text-lg font-light">Semarang, Indonesia</p>
               </div>
             </div>
